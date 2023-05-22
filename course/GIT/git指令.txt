@@ -1,0 +1,24 @@
+git
+
+git clone  		下载源码
+git add 		提交到暂存区
+git commit 	提交到本地库
+
+git push		推送到远程库
+
+git status		查看当前状态
+
+本地库日志相关操作
+git reflog
+前进和后退版本 通过id进行
+例如 git reset --hard 回到最近一次提交到本地库的版本
+        git reset --hard logId	 到指定的版本
+
+
+
+
+创建分支
+查看分支
+切换分支
+
+

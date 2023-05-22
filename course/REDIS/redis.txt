@@ -1,0 +1,261 @@
+编程语言中 参数备注信息 中括号 表示可以有 可以没有
+redis 7.0
+	key - value
+数据类型和使用
+	这个数据类型指的是value的类型
+	key的操作 
+		添加元素 set keyName value
+		keys *			查看当前库的所有key
+		del key  			删除指定的key
+		expire seconds 		给key设置过期时间
+		ttl+key			查看key的剩余时间
+		randomkey		随机返回一个key
+		move keyName+dbIndex	指定的key从一个库剪切到另一个库
+		rename oldName newName	重命名key
+		type + keyName		查看key的类型
+		select + dbIndex		切换不同的库(0~15)
+		dbsize 			返回当前库中的key的个数
+		flushdb			清空当前库
+		flushall			清空整个redis
+		
+	string  
+		单key 单value
+		一个key对应一个value
+		添加元素		set + keyName + value
+					set name tom
+		取值		get + keyName
+		同时设置多个	mset key1 val1 key2 val2 ...
+		同时获取多个	mget key1 key2 ...
+			参数解释
+			[NX|XX] [GET] [EX seconds|PX millise]
+			nx 	表示当前key不存在时才能创建
+			xx	表示当前key存在的时候才能创建
+			get	新增的元素无法直接获取
+			ex	设置过期时间 以秒为单位
+			px	设置过期时间 以毫秒为单位
+		递增
+			前提：value必须是整数类型
+			incr + keyName		每次递增1 
+			incrby +keyName num	每次递增指定的num
+		递减	
+			decr + keyName		每次减1
+			decrby +keyName num	每次减num
+
+		获取字符串长度
+			strlen+keyName		获取value的字节个数
+		追加value
+			append+keyName value 	在末尾追加内容
+		先获取在更新 类似set keyName value xx(当key存在的时候创建)
+			getset keyName value	先获取之前的值在设置新的值
+
+		小结：
+			String类型是单值单value的 也就是说一个key对应一个value
+			添加元素 set + key + value
+			同时添加多个 mset key value [key2 value2 key3 value3 ]
+			获取元素 get + keyName
+			同时获取多个 mget key [key2 key3 ...]
+			每次递增1 incr + keyName
+			指定每次递增 incrby + keyName
+			获取key的长度  strlen + keyName
+			向key追加内容  append+keyName+value（要追加的值）
+			更新key的值
+				1st.  set key value xx  当key存在的时候设置value
+				2nd. getset keyName value 先获取在设置
+					
+	
+	List
+		单key多value
+		一个key多个值
+		添加元素		
+			在左边开始添加	lpush keyName value1 [value2 ....]
+					lpush id 1 2 3 4 5
+			在右边开始添加	rpush keyName value1 [value2...]
+		遍历元素
+			lrange keyName start end  如果是从0到-1 遍历全部
+		获取元素
+			lpop keyName [count] 	count 指定要获取多少个元素
+			rpop keyName [count]
+		根据元素下标取值
+			lindex keyName 元素的下标
+		获取元素个数
+			llen keyName
+		删除一个或多个value
+			lrem keyName count value
+				count 指定要删除的个数
+				 value 要删除的值	
+		截取元素（只保留范围内的元素）
+			ltrim keyName strat stop
+				start 从哪开始截取 	 下标
+				stop 截取到哪里结束	 下标
+		取一个元素到另个list
+			rpoplpush source destination
+				source 原list
+				destination 目标list
+
+		修改指定下标的值
+			lset keyName index newValue	
+				index 要修改的元素的下标
+				newValue 新的值
+		在某个元素的前边或后边添加值
+			linsert keyName before|after pivot element
+				before 	在指定值的前边
+				after	在指定值的后边			
+				pivot	指定的值
+				element 	要添加的值
+=======================================================			
+	redis客户端处理中文乱码  登录客户端时添加--raw参数
+		redis-cli -p 6379 --raw
+	hash
+		底层是散列表
+		单key 多value - Key-Value模式不变 但Value又是一个键值对
+		Map<String,Map<Object,Object>>
+		添加元素
+			hset keyName field value [field value ...]
+		当field不存在时添加
+			hsetnx keyName field // 每次只能添加一个field 
+		获取单个元素
+			hget keyName field // field 字段 可以理解为value中的key
+		获取多个元素
+			hmget keyName field [field ...]
+		设置多个元素
+			hmset keyName field value [field value]
+		获取key中全部的value
+			hgetall keyName
+		删除key中的field
+			hdel keyName field [field] // 如果field全部删除 key也就不存在了
+		获取key中的所有元素个数
+			hlen keyName
+		判断是否包含某个field
+			包含返回1 否则返回0
+			hexists keyName field
+		获取全部的key
+			hkeys keyName
+		获取全部的value
+			hvals keyName
+		递增
+			前提：value必须是数值类型
+			hincrby keyName field 每次递增多少
+		递增小数类型
+			hincrbyfloat keyName field 小数值
+		随机获取field
+			获取的是field不是对应的value
+			hrandfield keyName [count] 
+				count 可以指定随机获取的个数
+		
+
+	set
+		单key多value 要求元素唯一
+		添加元素
+			sadd keyName value [value...]
+		遍历元素
+			smembers keyName
+		判断是否存在某个元素
+			sismember keyName value
+		删除指定的元素
+			srem keyName 要删除的值
+				0表示删除失败  1 表示删除成功
+		获取集合中的元素个数
+			scard keyName
+		随机获取元素
+			srandmember keyName [count]
+				count可以指定随机抽取的个数
+		弹出元素
+			spop keyName [count]
+				count 指定弹出元素的个数
+		移动元素
+			将一个集合中的元素移动到另一个集合中
+			smove source target element
+				source 原集合
+				target 目标集合
+				element 需要移动的元素
+		集合元素
+			交集
+				两个或多个集合共有的部分
+				sinter key [key]
+			并集
+				合并两个集合
+				sunion key [key]
+
+			差集
+				以左边的结合为基准 获取右边集合没有的数据
+				sdiff key [key]
+			
+	zset （sorted set）	
+		有序的set 元素唯一	
+		在原有的set基础上添加了一个分数(score) 这个分数是用来排序的
+			set中的元素唯一 但score可以重复
+		添加元素
+			zadd keyName score value [score value] // 相当于把hash中的field改成了score
+				score 用来排序的 可以重复
+		遍历
+			zrange key start stop [BYSCORE|BYLEX] [REV] [LIMIT offset count] [WITHSCORES]
+				start 		开始的下标
+				stop 		结束的下标 如果是全部遍历 0 到 -1
+				BYSCORE|BYLEX    	根据分数查询
+				REV		反转 从大到小
+				LIMIT offset count	取指定个数的元素  offset 偏移量 
+				WITHSCORES	连同score一块查询出来 相当于查询全部的value
+
+				zrange key 0 -1 遍历所有元素
+				zrange key 0 2 根据下标取值
+				zrange key 0 -1 withscores 带有分数的遍历
+
+				ZRANGEBYSCORE z1 3 10   查询socre在3到10分之间的所有value
+				ZRANGEBYSCORE z1 (3 (10 注意：( 表示不包含
+		获取集合个数
+			zcard key
+		删除集合中的元素
+			根据score中的value进行删除
+				zrem key member [member ...]
+					member  要删除的那个value值 可以有多个
+		给分数递增
+			ZINCRBY key increment value
+				increment  要递增的数值
+				value 指定要给哪个value的score递增
+			ZINCRBY z1 1 tom 表示给value是tom的score每次递增1
+		统计元素个数 根据score
+			zcount key minScore maxScore
+			ZCOUNT z1 5 6  统计5到6分的所有元素个数	
+		弹出元素
+			zmpop 1 z1 min count 1
+			ZMPOP 1(需要弹出的元素个数) z1(集合key) min（弹出最小的） count 1(总的需要弹出个数)
+		
+		获取下标
+			zrank key member
+				member 表示的是value值
+			zrank z1 judy  获取judy的下标索引
+		倒序获取下标索引
+			zrevrank key member
+
+			zrevrank z1 jerry 逆序获取jerry的下标索引
+
+		
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+		
+
+
+
+
+
+
+
+
+

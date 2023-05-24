@@ -5,7 +5,7 @@
 ```tex
 Spring 中文含义 春天
 发展历史：
-	2002年由悉尼大学音乐系博士Rod Johnson 退出了Spring框架的雏形 Interface21框架
+	2002年由悉尼大学音乐系博士Rod Johnson 推出了Spring框架的雏形 Interface21框架
 	2004年3月正式发布了Spring1.0版本
 理念：
 	使现有技术更加容易使用，Spring提供了很多框架的整合技术
@@ -288,7 +288,7 @@ public class Test {
     }
 ```
 
- ![image-20230417002859270](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417002859270.png)
+ ![image-20230417002859270](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241009200.png)
 
 ## HelloWorld
 
@@ -304,9 +304,9 @@ public class Test {
 
 选中项目右键 -> New -> Project
 
-![image-20230417190205296](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417190205296.png)
+![image-20230417190205296](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241017326.png)
 
-![image-20230417190245842](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417190245842.png)
+![image-20230417190245842](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241016896.png)
 
 ### 新建实体类User
 
@@ -340,7 +340,7 @@ public class User {
 
 https://docs.spring.io/spring-framework/docs/5.2.23.RELEASE/spring-framework-reference/core.html#spring-core
 
-![image-20230417191459033](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417191459033.png)
+![image-20230417191459033](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241017078.png)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -414,7 +414,7 @@ User对象的属性值是怎么设置的？
 
 因为Spring框架继承了很多相关的类 帮我们处理了创建对象的流程
 
-![image-20230417193309279](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417193309279.png)
+![image-20230417193309279](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241026471.png)
 
 ### 进一步理解
 
@@ -643,7 +643,7 @@ Spring默认是使用无参的构造方法来创建对象
 
 如果我们将无参构造方法去掉之后 运行会直接报错 
 
-![image-20230417202727483](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417202727483.png)
+![image-20230417202727483](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241009531.png)
 
 ![image-20230417202741966](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417202741966.png)
 
@@ -659,7 +659,7 @@ Spring给我们提供了三种方式可以使用有参构造器
 
 ##### 方式1 下标索引注入属性值
 
-![image-20230417203833484](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417203833484.png)
+![image-20230417203833484](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241009213.png)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -716,7 +716,7 @@ Spring给我们提供了三种方式可以使用有参构造器
 </beans>
 ```
 
-##### 方式3[==常用==] 直接通过参数名方式来设置Bean
+##### 方式3[常用] 直接通过参数名方式来设置Bean
 
 ![image-20230417204701039](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417204701039.png)
 
@@ -767,8 +767,6 @@ package com.etjava.model;
 
 public class User2 {
     private String userName;
-
-
     public User2(){
         System.out.println("User2类的无参构造方法");
     }
@@ -848,7 +846,7 @@ public class Test {
 
 ```
 
-![image-20230417205545138](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417205545138.png)
+![image-20230417205545138](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241028466.png)
 
 运行结果可以看出 在Spring加载时就会初始化所有配置的bean
 
@@ -879,7 +877,7 @@ public class Test {
 
 
 
-![image-20230417205700573](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417205700573.png)
+![image-20230417205700573](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241028001.png)
 
 ## Spring 其他配置
 

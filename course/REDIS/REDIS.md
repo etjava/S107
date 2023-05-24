@@ -459,7 +459,7 @@ https://redis.io/commands/
 http://www.redis.cn/commands.html
 ```
 
-![image-20230509230918395](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230509230918395.png)
+![image-20230509230918395](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241631178.png)
 
 
 
@@ -518,11 +518,11 @@ set k1 hello
 get k1
 ```
 
-![image-20230509235505602](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230509235505602.png)
+![image-20230509235505602](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241631698.png)
 
-![image-20230509235700143](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230509235700143.png)
+![image-20230509235700143](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241631024.png)
 
-![image-20230510000243216](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230510000243216.png)
+![image-20230510000243216](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241631658.png)
 
 ##### 同时设置/获取多个键值
 

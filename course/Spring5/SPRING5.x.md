@@ -35,7 +35,7 @@ Spring特点
 https://docs.spring.io/spring-framework/docs/5.2.23.RELEASE/spring-framework-reference/core.html#beans-c-namespace
 ```
 
-![image-20230416230308551](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230416230308551.png)
+![image-20230416230308551](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241445610.png)
 
 ### Spring需要的依赖
 
@@ -92,7 +92,7 @@ https://docs.spring.io/spring-framework/docs/5.2.23.RELEASE/spring-framework-ref
 
 
 
-![image-20230416231015567](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230416231015567.png)
+![image-20230416231015567](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241445621.png)
 
 ### 扩展
 
@@ -128,9 +128,9 @@ IOC 是Spring框架的核心内容 使用多种方式完美的实现了IOC
 
 控制反转理解图
 
-![image-20230417003106796](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417003106796.png)
+![image-20230417003106796](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241445816.png)
 
-![image-20230417003312202](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417003312202.png)
+![image-20230417003312202](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241445061.png)
 
 新建maven项目 并添加依赖
 
@@ -167,7 +167,7 @@ IOC 是Spring框架的核心内容 使用多种方式完美的实现了IOC
 
 选中项目 右键 -> New -> Module
 
-![image-20230416235044691](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230416235044691.png)
+![image-20230416235044691](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241445722.png)
 
 ### UserDao
 
@@ -556,7 +556,7 @@ public class Test2 {
 
 ```
 
-![image-20230417195739859](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417195739859.png)
+![image-20230417195739859](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241445638.png)
 
 ## IOC创建对象的方式
 
@@ -570,7 +570,7 @@ public class Test2 {
 
 选中项目右键 New -> Module
 
-![image-20230417195923967](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417195923967.png)
+![image-20230417195923967](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241445037.png)
 
 ### 创建User实体类
 
@@ -645,9 +645,9 @@ Spring默认是使用无参的构造方法来创建对象
 
 ![image-20230417202727483](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241009531.png)
 
-![image-20230417202741966](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417202741966.png)
+![image-20230417202741966](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241446555.png)
 
-![image-20230417202805339](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417202805339.png)
+![image-20230417202805339](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241446833.png)
 
 #### 有参构造器如何使用
 
@@ -685,7 +685,7 @@ Spring给我们提供了三种方式可以使用有参构造器
 
 ##### 方式2 通过类型匹配有参构造方法
 
-![image-20230417203920213](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417203920213.png)
+![image-20230417203920213](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241446740.png)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -718,7 +718,7 @@ Spring给我们提供了三种方式可以使用有参构造器
 
 ##### 方式3[常用] 直接通过参数名方式来设置Bean
 
-![image-20230417204701039](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417204701039.png)
+![image-20230417204701039](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241446497.png)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -883,7 +883,7 @@ public class Test {
 
 ### 新建模块
 
-![image-20230417210434686](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417210434686.png)
+![image-20230417210434686](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241446697.png)
 
 #### 创建User实体类
 
@@ -950,7 +950,7 @@ public class Test {
 
 ```
 
-![image-20230417210930570](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417210930570.png)
+![image-20230417210930570](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241446638.png)
 
 #### bean
 
@@ -1045,13 +1045,13 @@ public class Test {
 
 ```
 
-![image-20230417212520744](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417212520744.png)
+![image-20230417212520744](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241447796.png)
 
 ## 依赖注入
 
 新建项目 spring_di
 
-![image-20230417212954907](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417212954907.png)
+![image-20230417212954907](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241447593.png)
 
 ### 创建User对象
 
@@ -1144,7 +1144,7 @@ public class Test {
 
 ```
 
-![image-20230417215443528](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230417215443528.png)
+![image-20230417215443528](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241447899.png)
 
 ### setter注入[重点]
 
@@ -1286,8 +1286,7 @@ public class Student {
 
     <bean id="student" class="com.etjava.model.Student">
         <!--普通属性值注入 直接使用value赋值-->
-        <property name="stuName" value="HCL"/>
-        
+        <property name="stuName" value="tom"/>
     </bean>
 
 </beans>
@@ -1838,7 +1837,7 @@ xmlns:c="http://www.springframework.org/schema/c"
 
 官方案例
 
-c命名空间
+p命名空间
 
 ```xml
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -1856,7 +1855,7 @@ c命名空间
 </beans>
 ```
 
-p命名空间
+c命名空间
 
 ```xml
 <beans xmlns="http://www.springframework.org/schema/beans"

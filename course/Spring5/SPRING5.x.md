@@ -414,7 +414,7 @@ User对象的属性值是怎么设置的？
 
 因为Spring框架继承了很多相关的类 帮我们处理了创建对象的流程
 
-![image-20230417193309279](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241026471.png)
+![image-20230417193309279](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131129265.png)
 
 ### 进一步理解
 
@@ -556,7 +556,7 @@ public class Test2 {
 
 ```
 
-![image-20230417195739859](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241445638.png)
+![image-20230417195739859](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131129534.png)
 
 ## IOC创建对象的方式
 
@@ -570,7 +570,7 @@ public class Test2 {
 
 选中项目右键 New -> Module
 
-![image-20230417195923967](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241445037.png)
+![image-20230417195923967](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131129343.png)
 
 ### 创建User实体类
 
@@ -643,9 +643,9 @@ Spring默认是使用无参的构造方法来创建对象
 
 如果我们将无参构造方法去掉之后 运行会直接报错 
 
-![image-20230417202727483](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241009531.png)
+![image-20230417202727483](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131129656.png)
 
-![image-20230417202741966](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241446555.png)
+![image-20230417202741966](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131129380.png)
 
 ![image-20230417202805339](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241446833.png)
 
@@ -846,7 +846,7 @@ public class Test {
 
 ```
 
-![image-20230417205545138](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241028466.png)
+![image-20230417205545138](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131129868.png)
 
 运行结果可以看出 在Spring加载时就会初始化所有配置的bean
 
@@ -877,13 +877,13 @@ public class Test {
 
 
 
-![image-20230417205700573](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241028001.png)
+![image-20230417205700573](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131129269.png)
 
 ## Spring 其他配置
 
 ### 新建模块
 
-![image-20230417210434686](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241446697.png)
+![image-20230417210434686](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131129024.png)
 
 #### 创建User实体类
 
@@ -950,7 +950,7 @@ public class Test {
 
 ```
 
-![image-20230417210930570](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241446638.png)
+![image-20230417210930570](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131128126.png)
 
 #### bean
 
@@ -1045,13 +1045,13 @@ public class Test {
 
 ```
 
-![image-20230417212520744](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241447796.png)
+![image-20230417212520744](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131128209.png)
 
 ## 依赖注入
 
 新建项目 spring_di
 
-![image-20230417212954907](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241447593.png)
+![image-20230417212954907](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131128908.png)
 
 ### 创建User对象
 
@@ -1144,7 +1144,7 @@ public class Test {
 
 ```
 
-![image-20230417215443528](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305241447899.png)
+![image-20230417215443528](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131128610.png)
 
 ### setter注入[重点]
 
@@ -1539,7 +1539,7 @@ public class Test {
 
 ```
 
-![image-20230418205428677](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230418205428677.png)
+![image-20230418205428677](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131128952.png)
 
 ###### Set注入
 
@@ -1887,7 +1887,7 @@ c命名空间
 
 p命名空间可以直接在注入bean时指定属性值 但是需要单独引入命名空间
 
-![image-20230418222318225](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230418222318225.png)
+![image-20230418222318225](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131128294.png)
 
 单独创建一个实体类进行测试
 
@@ -2042,7 +2042,7 @@ public class TeacherTest {
 
 ### Bean的作用域
 
-![image-20230418231346912](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230418231346912.png)
+![image-20230418231346912](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131128561.png)
 
 | Scope                                                        | Description                                                  |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
@@ -2055,7 +2055,7 @@ public class TeacherTest {
 
 #### 创建测试模块
 
-![image-20230418232132371](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230418232132371.png)
+![image-20230418232132371](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131128481.png)
 
 ##### 添加Teacher实体类
 
@@ -2078,7 +2078,7 @@ public class Teacher {
 
 #### singleton 单例
 
-![image-20230418231704698](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230418231704698.png)
+![image-20230418231704698](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131128457.png)
 
 默认就是单例的 我们也可以显示的给bean添加一个单例
 
@@ -2115,13 +2115,13 @@ public class Test {
 
 ```
 
-![image-20230418232844749](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230418232844749.png)
+![image-20230418232844749](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131128453.png)
 
 #### prototype 原型模式
 
 原型模式与单例模式相反 每个对象都有单独的实例
 
-![image-20230418233115374](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230418233115374.png)
+![image-20230418233115374](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131128203.png)
 
 ##### spring配置文件
 
@@ -2160,7 +2160,7 @@ public class Test {
 
 ```
 
-![image-20230418233305878](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230418233305878.png)
+![image-20230418233305878](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131128437.png)
 
 #### request、session、application
 
@@ -2196,7 +2196,7 @@ spring会在上下文环境中自动查找，并自动给bean配置属性（这�
 
 ### 新建模块
 
-![image-20230418234520705](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230418234520705.png)
+![image-20230418234520705](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131127728.png)
 
 ### 新建实体类
 
@@ -2321,7 +2321,7 @@ public class Test {
 
 ```
 
-![image-20230419000407659](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230419000407659.png)
+![image-20230419000407659](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131127505.png)
 
 ### 隐士装配
 
@@ -2380,7 +2380,7 @@ public class Test {
 
 ```
 
-![image-20230419001017443](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230419001017443.png)
+![image-20230419001017443](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131127776.png)
 
 
 
@@ -2449,7 +2449,7 @@ public class Test {
 
 ```
 
-![image-20230419001735017](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230419001735017.png)
+![image-20230419001735017](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131127058.png)
 
 ```
 小结
@@ -2461,7 +2461,7 @@ byType 需要保证所有bean的class唯一 并且该Bean需要和自动注入�
 
 ### 注解装配
 
-![image-20230419064236772](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230419064236772.png)
+![image-20230419064236772](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305300913791.png)
 
 使用注解注意事项：
 
@@ -2486,7 +2486,7 @@ byType 需要保证所有bean的class唯一 并且该Bean需要和自动注入�
 
 #### 新建模块
 
-![image-20230419200509638](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230419200509638.png)
+![image-20230419200509638](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131127941.png)
 
 #### 创建实体类
 
@@ -2958,7 +2958,7 @@ public class Test {
 在spring4之后 要使用注解开发业务 必须保证aop的依赖包导入了
 ```
 
-![image-20230419210346834](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230419210346834.png)
+![image-20230419210346834](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131127283.png)
 
 
 
@@ -2966,7 +2966,7 @@ public class Test {
 
 #### 新建模块
 
-![image-20230419211507567](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230419211507567.png)
+![image-20230419211507567](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131127471.png)
 
 #### @Component注解 【Bean注入】
 
@@ -2989,9 +2989,6 @@ public class Test {
     <!--开启注解-->
     <context:annotation-config/>
 
-
-
-
 </beans>
 ```
 
@@ -2999,9 +2996,7 @@ public class Test {
 
 ```java
 package com.etjava.model;
-
 import org.springframework.stereotype.Component;
-
 // Component 定义为组件的注解
 // 等价于 <bean id="user" class="com.etjava.model.User"/>
 @Component
@@ -3205,7 +3200,7 @@ public class Test {
 
 ```
 
-![image-20230419214945439](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230419214945439.png)
+![image-20230419214945439](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131127264.png)
 
 
 
@@ -3367,7 +3362,7 @@ public class Test {
 
 ```
 
-![image-20230419230631361](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230419230631361.png)
+![image-20230419230631361](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131127206.png)
 
 
 
@@ -3415,7 +3410,7 @@ Spring的IOC核心理念
 
 ```
 
-![image-20230419232732849](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230419232732849.png)
+![image-20230419232732849](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306061132489.png)
 
 
 
@@ -3423,7 +3418,7 @@ Spring的IOC核心理念
 
 #### 新建模块
 
-![image-20230419235702676](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230419235702676.png)
+![image-20230419235702676](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306061132747.png)
 
 ```
 角色分析
@@ -3529,7 +3524,7 @@ public class Test {
 
 #### 加深理解
 
-![image-20230420213907345](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230420213907345.png)
+![image-20230420213907345](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306061132332.png)
 
 ```
 实现用户增删改查操作
@@ -3659,7 +3654,7 @@ public class Test {
 
 ```
 
-![image-20230420212446624](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230420212446624.png)
+![image-20230420212446624](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306061132372.png)
 
 ### 动态代理
 
@@ -3694,7 +3689,7 @@ public class Test {
 
 #### 新建模块
 
-![image-20230420222000716](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230420222000716.png)
+![image-20230420222000716](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306061132895.png)
 
 #### 普通动态代理
 
@@ -3957,7 +3952,7 @@ public class Test {
 AOP （Aspet Oriented Programming） 面向切面编程，通过预编译方式和运行期动态代理实现程序功能统一维护的一种技术，AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，属于函数式编程的一种衍生泛型，我们利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率
 ```
 
-![image-20230422142851847](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230422142851847.png)
+![image-20230422142851847](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306061132238.png)
 
 ### AOP的作用
 
@@ -3981,7 +3976,7 @@ AOP在Spring中的作用
     	与切入点匹配的执行点
 ```
 
-![image-20230422143623938](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230422143623938.png)
+![image-20230422143623938](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306061132683.png)
 
 ### 横切点
 
@@ -4011,7 +4006,7 @@ SpringAOP中通过Advice定义横切逻辑支持5种类型
 
 #### 新建模块
 
-![image-20230422162430285](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230422162430285.png)
+![image-20230422162430285](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306061132062.png)
 
 
 
@@ -4216,7 +4211,7 @@ public class Test {
 
 ```
 
-![image-20230422170214718](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230422170214718.png)
+![image-20230422170214718](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131126269.png)
 
 #### 方式2 自定义类实现AOP
 
@@ -4372,7 +4367,7 @@ public class Test {
 
 ```
 
-![image-20230422172832948](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230422172832948.png)
+![image-20230422172832948](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131126198.png)
 
 #### 方式3 注解实现切入
 
@@ -4564,7 +4559,7 @@ public class Test {
 
 ```
 
-![image-20230422175406239](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230422175406239.png)
+![image-20230422175406239](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131126692.png)
 
 
 
@@ -4681,7 +4676,7 @@ public class TestMyBaits {
 
 ```
 
-![image-20230422194303872](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230422194303872.png)
+![image-20230422194303872](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131126040.png)
 
 #### MyBatis-Spring整合
 
@@ -4701,7 +4696,7 @@ public class TestMyBaits {
 
 ##### 新建模块
 
-![image-20230422180157457](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230422180157457.png)
+![image-20230422180157457](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131126355.png)
 
 ##### 添加依赖
 
@@ -5007,7 +5002,7 @@ public class TestMyBaits {
 
 ```
 
-![image-20230422202005620](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230422202005620.png)
+![image-20230422202005620](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131126651.png)
 
 
 
@@ -5137,7 +5132,7 @@ public class TestMyBaits {
 
 ```
 
-![image-20230422202809816](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230422202809816.png)
+![image-20230422202809816](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131126679.png)
 
 ## 事务管理
 
@@ -5163,7 +5158,7 @@ public class TestMyBaits {
 
 #### 新建模块
 
-![image-20230422211645657](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230422211645657.png)
+![image-20230422211645657](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131126120.png)
 
 #### 添加依赖
 
@@ -5426,7 +5421,7 @@ public class Test {
 
 ```
 
-![image-20230422213020581](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230422213020581.png)
+![image-20230422213020581](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131125595.png)
 
 
 
@@ -5545,7 +5540,7 @@ public class Test2 {
 
 ```
 
-![image-20230422214435466](C:\Users\etjav\AppData\Roaming\Typora\typora-user-images\image-20230422214435466.png)
+![image-20230422214435466](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202306131125854.png)
 
 ### 有事务控制
 

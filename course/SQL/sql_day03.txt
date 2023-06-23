@@ -1,0 +1,52 @@
+单表查询
+	EMP(雇员)
+	EMPNO		  员工编码
+	ENAME		  员工姓名
+	JOB		      岗位
+	MGR		      上级领导
+	HIRDATE		  入职日期
+	SAL		      薪资
+	COMM          奖金
+	DEPTNO		  所属部门
+
+	limit 分页查询
+		语法
+		select <select_lst> from tableName limit start , size
+			start 结果集的起始条数
+			size  每次取多少条数据
+		注意： limit 放在最后
+	子查询
+		一个查询语句的条件需要另个查询语句查询出的结果作为判断条件
+		例如：
+			获取SMITH的经理的员工编号，名字
+            1. 查出SMITH的经理的员工编号
+                select MGR from emp where ename='SMITH';
+            2. 获取该编号对应的名字及员工编号
+                select empno,ename from emp where empno=(select MGR from emp where ename='SMITH');
+        连接查询
+            92语法  直接拼条件
+                    例如 from a,b where a.id=b.id
+            99语法  使用[left|right|inner]join关键字
+                    例如 from a join b on a.id=b.id
+                    left join 以左侧表为主 根据指定的条件去匹配右侧表的数据
+                              左表的全部数据+右表种取匹配到的数据
+                    right join 以右侧表为主 根据指定的条件去匹配左侧表的数据
+                               右表的全部数据+左表匹配到的数据
+
+                    交集
+                        AB两表相交的部分 - inner join
+
+                    差集
+                    并集
+                    全集
+
+
+
+            通常做连表查询 小的结果(表)集驱动大的结果集(表)
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+emp(雇员)
+Field	Type		Comment
+EMPNO	varchar(32)	员工编码
+ENAME	varchar(32)	员工姓名
+JOB	varchar(32)	岗位
+MGR	varchar(32)	上级领导
+HIRDATE	datetime	入职日期
+SAL	double		薪资
+COMM	double		奖金
+DEPTNO	varchar(32)	所属部门
+
+salgrade（薪资等级）
+GRADE	int(11)		等级
+LOSAL	double		最小范围
+HISAL	double		最大范围
+
+-- 查询SMITH的薪资等级是多少
+1. 查SMITH薪资是多少
+select sal from emp where ename='SMITH'
+2.
+SELECT
+  sal,
+  b.GRADE
+FROM emp e,
+  salgrade b
+WHERE ename = 'SMITH'
+    AND e.SAL BETWEEN b.LOSAL
+    AND b.HISAL;
+    
+    
+    
+ 
+
+
+-- 查询每个员工的薪资等级 输出员工姓名薪资及等级
+
+SELECT
+  ename,
+  sal,
+  b.GRADE
+FROM emp e RIGHT JOIN
+  salgrade b
+ON e.SAL BETWEEN b.LOSAL
+    AND b.HISAL;
+
+-- 统计薪资等级大于3的有多少人 并输出所有人的编号
+SELECT
+  sal,
+  b.GRADE
+FROM emp e RIGHT JOIN
+  salgrade b
+ON e.SAL BETWEEN b.LOSAL
+    AND b.HISAL;
+    
+-- 获取所有薪资等级为3的雇员信息
+SELECT
+  e.empno,e.sal,b.GRADE
+FROM emp e RIGHT JOIN
+  salgrade b
+ON e.SAL BETWEEN b.LOSAL
+    AND b.HISAL WHERE b.GRADE=3; 
+    
+--  统计薪资等级为3的雇员有多少人 输出每个雇员的编号
+SELECT
+  b.GRADE,GROUP_CONCAT(e.empno) AS empno
+FROM emp e RIGHT JOIN
+  salgrade b
+ON e.SAL BETWEEN b.LOSAL
+    AND b.HISAL WHERE b.GRADE=3;
+
+--------------------------------------------------------
+-- 统计地址在NEW YORK 员工数量
+-- 1. 查询在NEW-YORK的部门编号
+SELECT deptno FROM dept WHERE loc='NEW YORK';
+-- 2. 统计该部门下的员工数量
+-- 2.1 统计员工数量 根据部门
+SELECT COUNT(*) FROM emp WHERE deptno='10';
+-- 2.2 92语法
+SELECT COUNT(*) FROM emp 
+	WHERE deptno=(SELECT deptno FROM dept WHERE loc='NEW YORK');
+-- 2.3 99语法 - join查询
+SELECT COUNT(*) AS total FROM emp e RIGHT JOIN dept d
+	ON e.deptno=d.deptno WHERE d.LOC='NEW YORK';
+
+-- 三表查询
+-- 统计部门地址在NEW YORK的员工薪资等级为5的员工信息 输入员工名字，薪资，等级
+
+SELECT * FROM (
+	SELECT e.* FROM emp e RIGHT JOIN dept d
+	ON e.deptno=d.deptno WHERE d.LOC='NEW YORK'
+) a LEFT JOIN salgrade s ON s.GRADE=5 
+	WHERE a.sal BETWEEN s.LOSAL AND s.HISAL 
+

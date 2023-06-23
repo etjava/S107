@@ -1,0 +1,78 @@
+单表查询
+	EMP(雇员)
+	EMPNO		  员工编码
+	ENAME		  员工姓名
+	JOB		      岗位
+	MGR		      上级领导
+	HIRDATE		  入职日期
+	SAL		      薪资
+	COMM          奖金
+	DEPTNO		  所属部门
+
+
+
+    分组
+        group by
+            获取每个部门下的雇员数量
+            SELECT COUNT(*) totalNums FROM emp GROUP BY deptno
+        having
+            配合group by 条件筛选
+            统计30号部门下的雇员数量
+            -- SELECT COUNT(*) totalNums FROM emp GROUP BY deptno having deptno='30';
+
+            SELECT COUNT(*) totalNums FROM emp WHERE deptno='30';
+        练习：
+            获取部门中雇员数量大于5人的部门编号
+            select deptno,count(*) total from emp group by deptno having total>5
+    追加
+        group_concat
+            会将查询出来的数据拼接到一起 使用逗号隔开
+            只能出现在select列表中
+                select 列表指的是查询列表 select ename,empno,deptno from emp
+             SELECT GROUP_CONCAT(ename) FROM emp;
+    聚合组合函数
+        count   统计个数   不会统计null
+            统计有津贴的人数
+            SELECT COUNT(comm) FROM emp;
+        sum     求和       会计算null
+            计算所有奖金总额
+            SELECT SUM(comm) FROM emp WHERE comm IS NOT NULL;
+        avg     平均值
+            获取所有雇员的平均薪资
+            select avg(sal) from emp;
+        round   保留小数位
+            获取所有雇员的平均薪资
+            SELECT ROUND(AVG(sal),2) FROM emp;
+                ROUND(AVG(sal),2) 里面的2 表示保留两位小数
+        max     最大值
+            获取薪资最多的是多少
+            select max(sal) from emp;
+            方式2
+            select sal from emp order by sal desc limit 1;
+        min     最小值
+            获取薪资最低的是多少
+            select min(sal) from emp;
+
+
+
+    1、统计雇员表中有多少个岗位 输出每个岗位的名称
+        SELECT job FROM emp GROUP BY job;
+    2、统计每个岗位有多少人
+        SELECT COUNT(ename) AS nums,job FROM emp GROUP BY job;
+    3、查询大于3人的岗位名称
+        SELECT COUNT(ename) AS nums,job FROM emp GROUP BY job HAVING nums>3;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

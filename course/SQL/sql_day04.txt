@@ -1,0 +1,30 @@
+连接查询
+        A表  B表
+    left join
+        左连接查询 - 以左表为主 左表的数据全部取出 然后右表中匹配的数据也会取出
+        A表独有+AB共有
+    right join
+    inner join
+
+
+    -- 左连接
+    -- 获取全部类别下的书籍信息
+    SELECT b.* FROM t_bookType a LEFT JOIN t_book b
+    ON a.id=b.typeId;
+    -- 查询没有类别或类别不存在的书籍信息
+    SELECT * FROM t_book a LEFT JOIN t_bookType b
+    ON a.typeId=b.id WHERE a.typeId IS NULL;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

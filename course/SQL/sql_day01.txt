@@ -1,0 +1,107 @@
+单表查询
+	EMP(雇员)
+	EMPNO		  员工编码
+	ENAME		  员工姓名
+	JOB		      岗位
+	MGR		      上级领导
+	HIRDATE		  入职日期
+	SAL		      薪资
+	COMM          奖金
+	DEPTNO		  所属部门
+
+	1. 全表查询
+		select * from emp;
+	2. 查询指定字段信息
+		查询雇员名称、雇员编号
+		select ename,empno from emp;
+	3. 带条件的查询 where
+		语法格式
+		select <select_list> from tableName where条件
+			<select_list>  要查询的字段列表
+			tableName      要查询的表
+			where条件      需要根据什么条件筛选数据
+			  -- 单条件查询
+				例如 查询姓名为SCOTT的雇员信息
+					select * from emp where ename='SCOTT';
+				练习题：
+					1、查询岗位是SALESMAN雇员名称和雇员编号
+					2、查询雇员编号是7788的雇员信息
+
+			  -- 多条件查询
+				例如 查询雇员上级领导编号为7566并且雇员名称为FORD的雇员信息
+
+					并且关系 使用and 连接两个或以上的查询条件
+					或者关系 使用or 连接两个或以上的查询条件
+					   select * from emp where mgr='7566' and ename='FORD';
+                        查询岗位为CLERK或MANAGER的雇员信息
+					       select * from emp where job='CLERK' or job='MANAGER';
+					in 关键字 代替or  表示在某个或某些内的
+					   select * from emp where job in('CLERK','MANAGER');
+					not in 关键字 表示不在某(个)些范围内的
+    					例如 查询雇员名称不是King的雇员信息
+    						select * from emp where ename<>'King'; # <> 不等于
+    						select * from emp where ename not in('King');
+    				        练习题：
+            					1、查询20号部门下的雇员名字为SMITH的岗位名称 输出雇员名称，部门编号及岗位名称
+            						select ename,deptno,job from emp where deptno='20' and ename='SMITH'
+            					2、查询岗位名称为MANAGER或CLERK的雇员信息
+                    between and 在指定的范围内
+                        例如 查询在1981-05-01 ~ 1981-06-09个时间段内入职的雇员信息
+                            select * from emp where HIRDATE between '1981-05-01' and '1981-06-09';
+                    模糊查询 like关键字
+                            like中常用的通配符
+                                % 表示零个或多个
+                                _ 表示任意一个
+                        例如 查询雇员名字中包含T的  like '%T%';
+                                select * from emp where ename like '%T%';
+                    空值查询
+                        is null 表示为空的
+                        is not null 表示不为空
+                        查询没有上级领导的雇员信息
+                        select * from emp where mgr is null;
+
+                    去重查询 剔除重复数据
+                        使用distinct关键字
+                        例如 在雇员表中查询所有部门编号
+                            select distinct deptno from emp;
+                            如果是多字段去重 使用空格隔开 注意不能使用逗号
+                        练习：
+                            查询出是领导的雇员编号
+                            SELECT DISTINCT mgr FROM emp；
+                    排序  order by
+                        给查询出来的结果集进行排序的 按照某个指定的条件进行排序
+                        语法格式
+                        select <select_list> from tableName order by clounm [asc|desc]
+                        asc 默认的 升序
+                        desc 降序排序
+                        例如 查询雇员信息 按照雇员佣金升序排序
+                            select * from emp order by sal asc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

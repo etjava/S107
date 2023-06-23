@@ -1,0 +1,19 @@
+架构模式：   SSM - maven工程
+前端架构模式： easyui,bootstrap
+技术点：
+    1. Spring 配置连接池，初始化各类Bean (Realm,shiroFilter,事务统一管理等)
+    2. Spring MVC  视图解析和Controller注入
+    3. Spring 自带两种定时任务
+    4. Realm 权限验证
+    5. Shiro 加密
+    6. Lucene 全文检索
+    7. Ehcache 本地缓存
+    8. HttpClient , Jsoup 抓取网页内容并解析
+    9. 前端技术 bootstrap , easyui
+    10. logoback 按级别输出到不同文件
+
+******************************************************
+后期会将ehcache缓存替换为redis
+******************************************************
+
+Thank's By 2022-10-07

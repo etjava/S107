@@ -28,7 +28,7 @@ public class ParamController {
     // 注意 指定后你的url参数要与其保持一致 否则接收不到
     // 即 http://localhost:8080/springmvc_04_controller_war_exploded/param/t2?username=Tom
     @RequestMapping("/t2")
-    public String t2(@RequestParam("username") String name, Model model){
+    public String t2(@RequestParam(value = "username") String name, Model model){
         model.addAttribute("msg",name);
         return "hello";
     }

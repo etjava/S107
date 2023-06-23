@@ -1,6 +1,21 @@
 # SpringMVC 5.x
 
+## 添加web支持
+
+```
+idea导入的项目不识别web时 手动添加web支持
+ctrl+alt+shift+s -> module -> 选择要添加的模块右键 add -> web
+```
+
+
+
 ## 概述
+
+开发一个功能 应高内聚低耦合
+
+​	内聚：独立完成功能的能力
+
+​	耦合：两个或多个类之间的依赖关系
 
 ```
 什么是MVC
@@ -557,6 +572,29 @@ ctrl+shift+alt+S
 ```
 注意 
 web.xml必须使用4.0或最新的版本
+配置DispatcherServlet 
+
+<!--注册DispatcherServlet-->
+<servlet>
+<servlet-name>springmvc</servlet-name>
+<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+<!--关联SpringMVC的配置文件-->
+<init-param>
+<param-name>contextConfigLocation</param-name>
+<param-value>classpath:springmvc-servlet.xml</param-value>
+</init-param>
+<!--启动级别-->
+<load-on-startup>1</load-on-startup>
+</servlet>
+<!--
+配置需要拦截的请求
+/ 匹配所有请求 但不包括.jsp
+/* 匹配所有请求 包括.jsp
+-->
+<servlet-mapping>
+<servlet-name>springmvc</servlet-name>
+<url-pattern>/</url-pattern>
+</servlet-mapping>
 ```
 
 ![image-20230521143821246](https://cdn.jsdelivr.net/gh/etjava/TyporaPIC/img/202305211438517.png)

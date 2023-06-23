@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etjava.mapper.CrawlerBlogMapper">
+
+	<resultMap type="CrawlerBlog" id="CrawlerBlogResult">
+		<result property="id" column="id"/>
+		<result property="title" column="title"/>
+		<result property="summary" column="summary"/>
+		<result property="releaseDate" column="releaseDate"/>
+		<result property="clickHit" column="clickHit"/>
+		<result property="replyHit" column="replyHit"/>
+		<result property="content" column="content"/>
+		<result property="keyword" column="keyword"/>
+		<result property="state" column="state"/>
+		<result property="originalUrl" column="originalUrl"/>
+		<result property="createDate" column="createDate"/>
+		
+		<association property="blogType" column="typeId" select="com.etjava.mapper.BlogTypeMapper.findById"></association>
+	</resultMap>
+	
+	
+		<select id="lastBlog" parameterType="Integer" resultMap="CrawlerBlogResult">
+		select * from t_crawlerblog where id &lt; #{id} order by id desc limit 1
+		</select>
+		
+		<select id="nextBlog" parameterType="Integer" resultMap="CrawlerBlogResult">
+		select * from t_crawlerblog where id &gt; #{id} order by id limit 1
+		</select>
+	
+	<select id="findById" parameterType="Integer" resultMap="CrawlerBlogResult">
+		select * from t_crawlerblog where id=#{t_crawlerblog}
+	</select>
+	
+	<select id="list" parameterType="Map" resultMap="CrawlerBlogResult">
+		select * from t_crawlerblog
+		<where>
+			<if test="typeId!=null and typeId!='' ">
+				and typeId=#{typeId}
+			</if>	
+			<if test="state!=null ">
+				and state=#{state}
+			</if>
+			<if test="title!=null and title!='' ">
+				and title like #{title}
+			</if>
+			<if test="releaseDateStr!=null and releaseDateStr!='' ">
+				and DATE_FORMAT(releaseDate , '%Y年%m月')=#{releaseDateStr}
+			</if>	
+		</where>
+		 order by createDate desc 
+		<if test="start!=null and size!=null ">
+			limit ${start},#{size}
+		</if>
+	</select>
+	
+	<select id="total" parameterType="Map" resultType="Integer">
+		select count(1) from t_crawlerblog
+		<where>
+			<if test="typeId!=null and typeId!='' ">
+				and typeId=#{typeId}
+			</if>	
+			<if test="state!=null ">
+				and state=#{state}
+			</if>
+			<if test="title!=null and title!='' ">
+				and title like #{title}
+			</if>
+			<if test="releaseDateStr!=null and releaseDateStr!='' ">
+				and DATE_FORMAT(releaseDate , '%Y年%m月')=#{releaseDateStr}
+			</if>	
+		</where>
+	</select>
+	
+	<insert id="add" parameterType="CrawlerBlog" >
+		insert into t_crawlerblog values(null,#{title},null,null,0,0,#{content},100,null,0,#{originalUrl},now())
+	</insert>
+	
+	<update id="update" parameterType="CrawlerBlog">
+		update t_crawlerblog 
+		<set>
+			<if test="clickHit!=null">
+				clickHit=#{clickHit},
+			</if>
+			<if test="title!=null and title!='' ">
+				title=#{title},
+			</if>
+			<if test="summary!=null and summary!='' ">
+				summary=#{summary},
+			</if>
+			<if test="blogType!=null and blogType.id!=null ">
+				typeId=#{blogType.id},
+			</if>
+			<if test="content!=null and content!='' ">
+				content=#{content},
+			</if>
+			<if test="keyword!=null and keyword!='' ">
+				keyword=#{keyword},
+			</if>
+			<if test="state!=null ">
+				state=#{state},
+			</if>
+			<if test="releaseDate!=null">
+				releaseDate=now()
+			</if>
+			<if test="replyHit!=null">
+				replyHit=#{replyHit},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from t_crawlerblog where id=#{id}
+	</delete>
+</mapper> 

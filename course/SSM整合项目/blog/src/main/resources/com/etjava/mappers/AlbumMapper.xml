@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etjava.mapper.AlbumMapper">
+
+	<resultMap type="Album" id="AlbumResult">
+		<result property="id" column="id"/>
+		<result property="albumName" column="albumName"/>
+		<result property="releaseDate" column="releaseDate"/>
+		<result property="state" column="state"/>
+	</resultMap>
+	
+	<select id="findById" parameterType="Integer" resultType="Album">
+		select * from t_album where id=#{id}
+	</select>
+</mapper> 
